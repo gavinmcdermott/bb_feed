@@ -1,6 +1,5 @@
 var app = app || {};
 
-// The DOM element for a feed item...
 app.FeedListItemView = Backbone.View.extend({
 
   tagName: "li",

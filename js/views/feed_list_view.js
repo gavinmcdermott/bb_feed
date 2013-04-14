@@ -21,7 +21,7 @@ app.FeedListView = Backbone.View.extend({
     '<div>'
       + '<button class="showPrev">show previous 10</button>'
       + '<button class="showNext">show next 10</button><br />'
-      + '{{this.showIdxStart}} - {{this.showIdxEnd}}'
+      + 'results {{this.showIdxStart}} - {{this.showIdxEnd}}'
     + '</div>'),
 
   show: function() {
@@ -46,6 +46,7 @@ app.FeedListView = Backbone.View.extend({
 
   render: function() {
     this.$el.children().detach();
+
     this.$el.html( this.template() ).append(
       this.visibleItems.map(function(feedItem) {
         return new app.FeedListItemView({ model: feedItem }).render();

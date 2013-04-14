@@ -11,13 +11,23 @@
 
   <!-- include source files here... -->
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+  <!-- App specific dependencies -->
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/underscore.min.js"></script>
+  <script src="js/lib/backbone.min.js"></script>
+  <script src="js/lib/backbone_storage.min.js"></script>
+  <!-- App files -->
   <script src="js/models/feed.js"></script>
-  <script src="js/collections/feeds.js"></script>
-  <script src="js/views/app_view.js"></script>
-  <script src="js/views/item_view.js"></script>
+  <script src="js/collections/feedCollection.js"></script>
+  <script src="js/views/feed_list_item_view_detail.js"></script>
+  <script src="js/views/feed_list_item_view.js"></script>
+  <script src="js/views/feed_list_view.js"></script>
+  <script src="js/app.js"></script>
 
   <!-- include spec files here... -->
-  <script type="text/javascript" src="spec/feeds_spec.js"></script>
+  <script type="text/javascript" src="spec/google_feeds_api_spec.js"></script>
+  <script type="text/javascript" src="spec/feed_list_view_spec.js"></script>
 
   <script type="text/javascript">
     (function() {

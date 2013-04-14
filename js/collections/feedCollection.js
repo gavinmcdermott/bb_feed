@@ -10,13 +10,13 @@ app.FeedCollection = Backbone.Collection.extend({
   },
 
   fetch: function() {
-    google.load("feeds", "1", {callback: this.getFeeds.bind(this)});
+    google.load("feeds", "1", { callback: this.getFeeds.bind(this) });
   },
 
   getFeeds: function() {
     var feed = new google.feeds.Feed("http://feeds.feedburner.com/TEDTalks_video");
     feed.includeHistoricalEntries();
-    feed.setNumEntries(100);
+    feed.setNumEntries(250);
     var load = function(result) {
       if(result.error) return;
       var res = [];
