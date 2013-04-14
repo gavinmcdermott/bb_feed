@@ -14,7 +14,6 @@ app.FeedListItemView = Backbone.View.extend({
   },
 
   template: _.template('{{title}}'),
-  // template: _.template('YEPO'),
 
   render: function() {
     return this.$el.html( this.template( this.model.attributes ));
