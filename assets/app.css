@@ -78,6 +78,14 @@ html, body {
   -moz-border-radius: 4px;
   border-radius: 4px;
   margin-top: 11px;
+  box-shadow: 1px 0px 1px #d43638,0px 1px 1px #70070e,2px 1px 1px #70070e,1px 2px 1px #ab1d22,3px 2px 1px #ab1d22,2px 3px 1px #ab1d22,4px 3px 1px #ab1d22,3px 4px 1px #ab1d22,5px 4px 1px #ab1d22,4px 5px 1px #b52f33,6px 5px 1px #b52f33;
+}
+
+.btn:active {
+  box-shadow: 1px 0px 1px #d43638,0px 1px 1px #70070e,2px 1px 1px #70070e,1px 2px 1px #ab1d22,3px 2px 1px #ab1d22;
+  -webkit-transform: translate(3px,1px);
+  -moz-transform: translate(3px,1px);
+  transform: translate(3px,1px);
 }
 
 a {
@@ -138,6 +146,11 @@ header {
   background-color: #FAFAFA;
 }
 
+.feed-list-item:hover {
+  cursor: hand;
+  cursor: pointer;
+}
+
 .feed-list-item .title {
   display: inline-block;
   padding: 11px;
@@ -161,6 +174,14 @@ header {
 
 .details.btn {
   background-color: #bcbcbc;
+  box-shadow: 1px 0px 1px #707070,0px 1px 1px #707070,2px 1px 1px #707070,1px 2px 1px #8f8f8f,3px 2px 1px #8f8f8f,2px 3px 1px #8f8f8f,4px 3px 1px #a8a8a8,3px 4px 1px #a8a8a8,5px 4px 1px #a8a8a8,4px 5px 1px #a8a8a8,6px 5px 1px #a8a8a8;
+}
+
+.details.btn:active {
+  box-shadow: 1px 0px 1px #707070,0px 1px 1px #707070,2px 1px 1px #8f8f8f,1px 2px 1px #8f8f8f,3px 2px 1px #a8a8a8;
+  -webkit-transform: translate(3px,1px);
+  -moz-transform: translate(3px,1px);
+  transform: translate(3px,1px);
 }
 
 .details.link {
