@@ -17,12 +17,12 @@ app.FeedListView = Backbone.View.extend({
     'click .showPrev': 'showPrev'
   },
 
-  template: _.template(
-    '<div>'
-      + '<button class="showPrev">show previous 10</button>'
-      + '<button class="showNext">show next 10</button><br />'
-      + 'results {{this.showIdxStart}} - {{this.showIdxEnd}}'
-    + '</div>'),
+  template: _.template('<span class="result-count">results {{this.showIdxStart}} - {{this.showIdxEnd}}</span>'),
+
+  button_template: _.template(
+      '<button class="showPrev btn">{{this.setPrevTitle()}}</button>'
+      + '<button class="showNext btn">{{this.setNextTitle()}}</button><br />'
+  ),
 
   show: function() {
     this.visibleItems.reset(this.collection.models.slice(this.showIdxStart, this.showIdxEnd));
@@ -34,6 +34,7 @@ app.FeedListView = Backbone.View.extend({
       this.showIdxEnd += this.step;
       this.visibleItems.reset(this.collection.models.slice(this.showIdxStart, this.showIdxEnd));
     }
+    app.trigger('removeDetailView');
   },
 
   showPrev: function() {
@@ -41,6 +42,24 @@ app.FeedListView = Backbone.View.extend({
       this.showIdxStart -= this.step;
       this.showIdxEnd -= this.step;
       this.visibleItems.reset(this.collection.models.slice(this.showIdxStart, this.showIdxEnd));
+    }
+    app.trigger('removeDetailView');
+  },
+
+  setPrevTitle: function() {
+    if (this.showIdxStart === 0) {
+      return '';
+    } else {
+      return 'previous 10';
+    }
+  },
+
+
+  setNextTitle: function() {
+    if (this.showIdxEnd < this.collection.length) {
+      return 'next 10';
+    } else {
+      return '';
     }
   },
 
@@ -51,7 +70,7 @@ app.FeedListView = Backbone.View.extend({
       this.visibleItems.map(function(feedItem) {
         return new app.FeedListItemView({ model: feedItem }).render();
       })
-    );
+    ).append( this.button_template() );
 
     return this.$el;
   }
